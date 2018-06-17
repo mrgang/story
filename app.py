@@ -16,7 +16,7 @@ headers = {'Connection': 'keep-alive',
 'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8'}
 @app.route('/',methods=['POST','GET'])
 def welcome():
-    return "<h1 style="text-align:center">Server is running</h1>"
+    return "<h1 style='text-align:center'>Server is running</h1>"
 
 @app.route('/Analyzer/<string:action>',methods=['POST','GET'])
 def mainPage(action):
