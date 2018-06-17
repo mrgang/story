@@ -14,6 +14,10 @@ headers = {'Connection': 'keep-alive',
 'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
 'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8'}
+@app.route('/',methods=['POST','GET'])
+def welcome():
+    return "<h1 style="text-align:center">Server is running</h1>"
+
 @app.route('/Analyzer/<string:action>',methods=['POST','GET'])
 def mainPage(action):
     path = request.args.get('path')
