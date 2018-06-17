@@ -2,6 +2,6 @@
 # Install with `pip install -r requirements.txt`.
 flask
 requests
-lxml
 gevent
 bs4
+lxml
