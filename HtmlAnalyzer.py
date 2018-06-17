@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-from lxml import etree
+#from lxml import etree
+import lxml.etree as etree
 from bs4 import BeautifulSoup
 import json,requests
 headers = {'Connection': 'keep-alive',
