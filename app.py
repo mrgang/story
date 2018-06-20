@@ -59,6 +59,8 @@ def mainPage(action):
             return Analyzer.contentPage(proto, host,rest, content)
         else:
             return json.dumps({'success': False,'content':'current.there has not deal with,later will done'})
+    else:
+        print("resp can not read")
 @app.route('/Search/<string:keyword>',methods=['POST','GET'])
 def search(keyword):
     return Analyzer.search(keyword)
