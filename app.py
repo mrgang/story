@@ -340,6 +340,24 @@ class Analyzer:
         return json.dumps(result)
 
 app = Flask(__name__)
+
+@app.route('/',methods=['POST','GET'])
+def wel():
+    return '''<h1 style='text-align:center'>Server is Running.</h1>'''
+@app.route('/getPage',methods=['POST','GET'])
+def getp():
+    path = request.args.get('path')
+    resp = requests.get(path, headers=headers, timeout=5)
+    proto, rest = UrlPase.splittype(resp.url)
+    host, rest = UrlPase.splithost(rest)
+    if host == 'm.zwdu.com' or host == 'm.biqubao.com':
+        resp.encoding = "GBK"
+    else:
+        resp.encoding = "utf-8"
+    content = resp.text
+
+    return content
+
 @app.route('/Analyzer/<string:action>',methods=['POST','GET'])
 def mainPage(action):
     path = request.args.get('path')
